@@ -15,7 +15,7 @@ In `ambulances-server` folder. Run `mvn spring-boot:build-image` to build the im
 
 ## Running docker image
 
-Run `docker run -d -p 8080:8080 -t spring-boot:1.0`.
+Run `docker run -d -p 8080:8080 -t ambulances`.
 
 ## Browser the aps
 

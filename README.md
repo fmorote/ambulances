@@ -17,6 +17,7 @@ In `ambulances-server` folder. Run `mvn spring-boot:build-image` to build the im
 
 Run `docker run -d -p 8080:8080 -t ambulances`.
 
-## Browser the aps
+## Browser the app
 
 Open a browser and go `http:\\localhost:8080`.
+Open a browser and go `http:\\localhost:8080\swagger-ui.html`.

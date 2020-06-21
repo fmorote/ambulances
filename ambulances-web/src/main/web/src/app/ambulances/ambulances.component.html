@@ -1,0 +1,26 @@
+<h2>Transfers</h2>
+<ul class="transfers">
+  <li *ngFor="let transfer of transfers"
+      [class.selected]="transfer === selectedTransfer"
+      (click)="onSelect(transfer)">
+    <span class="badge">{{transfer.ambulance.id}}</span>
+    <div class="free" [ngClass]="{'red': transfer.freePlaces === 0, 'green': transfer.freePlaces !== 0}"> {{transfer.freePlaces}}
+      free places
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="selectedTransfer" class="transfer-detail">
+
+  <h2>{{selectedTransfer.ambulance.id | uppercase}}</h2>
+  <div><span>Ambulance: </span>{{selectedTransfer.ambulance.id}} ({{selectedTransfer.ambulance.seats}} seats)</div>
+  <div>
+    <label>Free places: {{selectedTransfer.freePlaces}}</label>
+    <ul class="journeys">
+      <li *ngFor="let journey of selectedTransfer.journeys">
+        <span class="journey">Journey {{journey.id}}</span> with {{journey.people}} people
+      </li>
+    </ul>
+  </div>
+
+</div>

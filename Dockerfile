@@ -2,7 +2,7 @@
 FROM openjdk:8-jdk-alpine
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=ambulances-server/target/ambulances.jar
+ARG JAR_FILE=target/ambulances.jar
 
 # cd /opt/app
 WORKDIR /opt/app

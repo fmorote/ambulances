@@ -74,6 +74,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>ambulances</name>
+                    </image>
+                    <outputDirectory>${project.parent.basedir}/target</outputDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -92,12 +98,16 @@
                     <execution>
                         <id>copy-resources</id>
                         <phase>validate</phase>
-                        <goals><goal>copy-resources</goal></goals>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.parent.basedir}/ambulances-web/src/main/web/dist/ambulances-app/</directory>
+                                    <directory>
+                                        ${project.parent.basedir}/ambulances-web/src/main/web/dist/ambulances-app/
+                                    </directory>
                                 </resource>
                             </resources>
                         </configuration>
